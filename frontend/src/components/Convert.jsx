@@ -10,38 +10,7 @@ const Convert = () => {
            console.log(e.target.files[0]);
            setSelectedFile(e.target.files[0]);
         };
-        
-
-        // const handleSubmit = async (event) => {
-        //   event.preventDefault();
-
-        //   if (!selectedFile) {
-        //     alert("Please select a file to upload");
-        //     return;
-        //   }
-          
-        //   const formData = new FormData();
-        //   formData.append("file", selectedFile);
-
-        //   try {
-        //     const response = await axios.post(
-        //       "http://localhost:5000/convertFile",
-        //       formData,
-        //       {
-        //         headers: {
-        //           "Content-Type": "multipart/form-data",
-        //         },
-        //       }
-        //     );
-
-        //     // Handle successful response
-        //     console.log("File converted successfully", response.data);
-        //     alert("File converted and received successfully!");
-        //   } catch (error) {
-        //     console.error("Error uploading file:", error);
-        //     alert("Failed to upload file");
-        //   }
-
+     
           const handleSubmit = async (event) => {
             event.preventDefault();  //no reloading
             if (!selectedFile) {
