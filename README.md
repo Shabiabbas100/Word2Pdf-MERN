@@ -21,7 +21,7 @@ A highly responsnive web application that converts .docx files into PDFs and  do
 ### Backend
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Shabiabbas100/Word2Pdf-MERN/
    cd backend
 2. Install dependencies:
    ```bash
