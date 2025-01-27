@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import { FaFile } from "react-icons/fa";
-import axios from 'axios'  //backend me data bhejo
+import axios from 'axios'  
 const Convert = () => {
         const [selectedFile, setSelectedFile] = useState(null);
         const [convert, setConvert] = useState("");
@@ -12,7 +12,7 @@ const Convert = () => {
         };
      
           const handleSubmit = async (event) => {
-            event.preventDefault();  //no reloading
+            event.preventDefault(); 
             if (!selectedFile) {
               setConvert("Please select a file");
               
@@ -25,11 +25,11 @@ const Convert = () => {
                 "https://backendword2pdf-hov4.onrender.com/convertFile",
                 formData,
                 {
-                  responseType: "blob", //binary data ->files etc
+                  responseType: "blob", 
                 }
               );
               
-              // https://wordtopdf-mern-stack.onrender.com
+              
                console.log(response.data);
               const url = window.URL.createObjectURL(new Blob([response.data]));
               console.log(url);
@@ -98,7 +98,7 @@ const Convert = () => {
               {downloadError && (
                 <div className="text-red-500 text-center">{downloadError}</div>
               )}
-              {/* This checks if the convert variable is truthy. If it is, it renders a  with a green text indicating the value of convert */}
+             
             </div>
           </div>
         </div>
@@ -108,5 +108,4 @@ const Convert = () => {
 }
 
 export default Convert
-//  h-screen =100vh  items-center->vertivally center justify-center->horizontally center
-// border-dashed->dash border ,border-2 ->light gray border
+

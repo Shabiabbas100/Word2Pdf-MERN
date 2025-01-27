@@ -13,10 +13,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
-// Set up storage for Multer to handle file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Make sure this directory exists
+    cb(null, 'uploads/'); 
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname);
@@ -25,7 +24,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Route to upload a Word file and convert it to PDF
 app.post('/convertFile', upload.single('file'), async (req, res) => {
   try {
     if (!req.file) {
@@ -50,13 +48,13 @@ app.post('/convertFile', upload.single('file'), async (req, res) => {
     const { width, height } = page.getSize();
     let yPosition = height - 20;
 
-    // Function to draw text with checks
+    
     const drawText = (text, options = {}) => {
       if (yPosition < 20) {
         page = pdfDoc.addPage();
         yPosition = height - 20;
       }
-      if (text) { // Ensure text is defined before drawing
+      if (text) { 
         page.drawText(text, {
           x: options.indent || 20,
           y: yPosition,
@@ -69,7 +67,7 @@ app.post('/convertFile', upload.single('file'), async (req, res) => {
       }
     };
 
-    // Function to process HTML nodes with checks for undefined text
+  
     const processNode = (node, indent = 20) => {
       if (node.type === 'text' && node.data) {
         drawText(node.data.trim(), { indent, size: 12 });
