@@ -1,4 +1,4 @@
-# Word2Pdf Converter (MERN Stack) | [LINK](word2pdf.vercel.app)
+# Word2Pdf Converter (MERN Stack) | [LINK](https://word2pdf.vercel.app/)
 
 A highly responsnive web application that converts .docx files into PDFs and  download on local device. The application allows users to upload Word documents, which are then processed and converted into PDF files.
 
